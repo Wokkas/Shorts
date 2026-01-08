@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://shortsdownload.de5.net/sitemap.xml
