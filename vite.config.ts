@@ -5,9 +5,8 @@ import react from '@vitejs/plugin-react';
 export default defineConfig(({ mode }) => {
     const env = loadEnv(mode, '.', '');
     return {
-      // ⚠️ 关键修改：base 必须和你的 GitHub 仓库名完全一致
-      // 你的仓库叫 'Shorts'，所以这里必须是 '/Shorts/'
-      base: '/Shorts/',
+      // 使用自定义域名时，通常建议使用 '/' 作为根路径
+      base: '/',
       
       server: {
         port: 3000,

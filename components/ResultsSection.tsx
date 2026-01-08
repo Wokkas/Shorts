@@ -85,8 +85,14 @@ const ResultsSection: React.FC<ResultsSectionProps> = ({ data, originalUrl }) =>
             setDownloadUrl(pData.download_url);
             setDownloadState('completed');
             
-            // Trigger download
-            window.location.href = pData.download_url;
+            // Trigger download using a hidden anchor tag to avoid page refresh
+            const link = document.createElement('a');
+            link.href = pData.download_url;
+            link.target = '_blank'; // Open in new tab/start download
+            link.rel = 'noopener noreferrer';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
           }
         } catch (err) {
           console.error("Polling error:", err);
@@ -219,7 +225,7 @@ const ResultsSection: React.FC<ResultsSectionProps> = ({ data, originalUrl }) =>
                   </button>
                   {downloadState === 'completed' && (
                      <p className="text-[10px] text-green-500 mt-2 text-center">
-                       If download didn't start automatically, <a href={downloadUrl!} className="underline font-bold">click here</a>
+                       If download didn't start automatically, <a href={downloadUrl!} target="_blank" rel="noreferrer" className="underline font-bold">click here</a>
                      </p>
                   )}
                 </div>
