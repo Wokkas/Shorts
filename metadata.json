@@ -1,0 +1,5 @@
+{
+  "name": "ShortsGenius - AI Video Analyzer",
+  "description": "Analyze YouTube Shorts, extract metadata, and generate AI summaries using Gemini models.",
+  "requestFramePermissions": []
+}
