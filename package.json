@@ -1,6 +1,7 @@
 {
   "name": "shorts-genius",
   "private": true,
+  "homepage": "https://shortsdownload.de5.net",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
