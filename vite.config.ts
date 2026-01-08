@@ -5,8 +5,8 @@ import react from '@vitejs/plugin-react';
 export default defineConfig(({ mode }) => {
     const env = loadEnv(mode, '.', '');
     return {
-      // GitHub Pages 仓库路径默认是 https://username.github.io/repo/，因此用相对路径，避免 /assets/... 404
-      base: './',
+      // 使用自定义域名时，通常建议使用 '/' 作为根路径
+      base: '/',
       
       server: {
         port: 3000,
